@@ -58,3 +58,6 @@ gem 'faker'
 
 # Simple Form
 gem 'simple_form'
+
+# User Authentication
+gem 'devise'
