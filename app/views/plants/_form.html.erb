@@ -2,6 +2,7 @@
 <%= simple_form_for @plant do |f| %>
   <%= f.input :name %>
   <%= f.input :variant, as: :radio_buttons, collection: [['0', 'Tree'], ['1', 'Flowering'],['2', 'Bush'],['3', 'Fruit/Veg/Herb']], label_method: :second, value_method: :first %>
+  <%= f.input :pot_size %>
   <%= f.input :price %>
   <%= f.button :submit %>
 <% end %>

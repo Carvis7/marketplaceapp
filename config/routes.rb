@@ -2,6 +2,6 @@ Rails.application.routes.draw do
 
   resources :plants
 
-  root to: 'plant#index'
+  root to: 'plants#index'
 end
  

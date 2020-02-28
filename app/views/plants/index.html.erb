@@ -1,5 +1,7 @@
 <h1> Plants for Sale </h1>
 
+<%= link_to 'Sell a Plant', new_plant_path %>
+
 <% @plants.each do |plant| %>
   <p>
     <%=  plant.name %>
