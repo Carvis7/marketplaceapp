@@ -1,5 +1,6 @@
 class PlantsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
+  before_action :authorize_user!, only: [:update,:edit,:destroy]
   before_action :find_plant, only: [:show,:edit,:update,:destroy]
 
   def index

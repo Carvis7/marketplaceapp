@@ -1,12 +1,17 @@
 <h1> Plants for Sale </h1>
 
-<%= link_to 'Sell a Plant', new_plant_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Sell a Plant', new_plant_path %>
+<% end %>
 
 <% @plants.each do |plant| %>
   <p>
-    <%=  plant.name %>
+    <%=  plant.name %> |
     <%= link_to 'Check it out', plant_path(plant)  %> |
+    <% if user_signed_in? %>
     <%= link_to 'Edit Plant', edit_plant_path(plant)  %> |
     <%= link_to 'Delete Plant', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %> |
+    <% end %>
   </p>
+
 <% end %>
