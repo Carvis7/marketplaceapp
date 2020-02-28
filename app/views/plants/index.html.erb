@@ -8,7 +8,7 @@
   <p>
     <%=  plant.name %> |
     <%= link_to 'Check it out', plant_path(plant)  %> |
-    <% if user_signed_in? %>
+    <% if user_signed_in? && plant.user_id == current_user.id %>
     <%= link_to 'Edit Plant', edit_plant_path(plant)  %> |
     <%= link_to 'Delete Plant', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %> |
     <% end %>

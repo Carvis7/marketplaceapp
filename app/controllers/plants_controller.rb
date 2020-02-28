@@ -1,7 +1,7 @@
 class PlantsController < ApplicationController
   before_action :authenticate_user!, only: [:new,:create,:edit,:update,:destroy]
-  before_action :authorize_user!, only: [:update,:edit,:destroy]
   before_action :find_plant, only: [:show,:edit,:update,:destroy]
+  before_action :authorize_user!, only: [:update,:edit,:destroy]
 
   def index
     @plants = Plant.all
@@ -17,6 +17,7 @@ class PlantsController < ApplicationController
 
   def create
     @plant = Plant.new(plant_params)
+    @plant.user_id = current_user.id
     if(@plant.save)
       redirect_to @plant
     else
@@ -52,6 +53,10 @@ class PlantsController < ApplicationController
 
   def find_plant
     @plant = Plant.find(params[:id])
+  end
+
+  def authorise_user
+    return true if current_user.id == @plant.user_id
   end
 
 end
