@@ -1,0 +1,11 @@
+
+<h1>My Dashboard</h1>
+
+<h2>Hello, <%= current_user.email %></h2>
+
+<h3>Plants For Sale</h3>
+<% @plants.each do |plant| %>
+  <p><%= plant.name %></p>
+<% end %>
+
+<%= link_to 'Update Details', edit_user_registration_path %>

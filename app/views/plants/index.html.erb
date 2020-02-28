@@ -1,6 +1,7 @@
 <h1> Plants for Sale </h1>
 
 <% if user_signed_in? %>
+  <%= link_to 'My Dashboard', dashboard_index_path %>
   <%= link_to 'Sell a Plant', new_plant_path %>
 <% end %>
 
