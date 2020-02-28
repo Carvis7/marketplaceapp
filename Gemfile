@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Fake plant generator
 gem 'faker'
+
+# Simple Form
+gem 'simple_form'

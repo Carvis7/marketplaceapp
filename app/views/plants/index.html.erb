@@ -1,0 +1,10 @@
+<h1> Plants for Sale </h1>
+
+<% @plants.each do |plant| %>
+  <p>
+    <%=  plant.name %>
+    <%= link_to 'Check it out', plant_path(plant)  %> |
+    <%= link_to 'Edit Plant', edit_plant_path(plant)  %> |
+    <%= link_to 'Delete Plant', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %> |
+  </p>
+<% end %>
