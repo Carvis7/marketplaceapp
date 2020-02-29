@@ -1,0 +1,14 @@
+<h1>Fancy Plants</h1>
+
+<div class="hero"></div>
+
+<p>
+  A place for plants
+</p>
+
+<% if user_signed_in? %>
+  <%= link_to 'My Dashboard', dashboard_index_path %> - 🌱- 
+  <%= link_to 'Sell a Plant', new_plant_path %> - 🌱- 
+<% end %>
+
+<%= link_to 'See what`s up', 'plants#index' %>

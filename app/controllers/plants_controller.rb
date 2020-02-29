@@ -48,14 +48,14 @@ class PlantsController < ApplicationController
   private
 
   def plant_params
-    params.require(:plant).permit(:name,:variant,:price,:pot_size)
+    params.require(:plant).permit(:name,:variant,:price,:pot_size,:image)
   end
 
   def find_plant
     @plant = Plant.find(params[:id])
   end
 
-  def authorise_user
+  def authorize_user!
     return true if current_user.id == @plant.user_id
   end
 

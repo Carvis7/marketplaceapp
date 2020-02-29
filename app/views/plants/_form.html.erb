@@ -1,9 +1,10 @@
 
 <%= simple_form_for @plant do |f| %>
-  <%= f.input :name %>
-  <%= f.input :variant, as: :radio_buttons, collection: [['Tree', 'Tree'], ['Flowering', 'Flowering'],['Bush', 'Bush'],['Fruit/Veg/Herb', 'Fruit/Veg/Herb']], label_method: :second, value_method: :first %>
-  <%= f.input :pot_size %>
-  <%= f.input :price %>
+  <%= f.input :name, required: true %>
+  <%= f.input :image, as: :file, label: "Image" %>
+  <%= f.input :variant, required: true, as: :radio_buttons, collection: [['Tree', 'Tree'], ['Flowering', 'Flowering'],['Bush', 'Bush'],['Fruit/Veg/Herb', 'Fruit/Veg/Herb']], label_method: :second, value_method: :first %>
+  <%= f.input :pot_size, label: "Pot Size (cm)" %>
+  <%= f.input :price, required: true, collection: 1..999, label: "Price $" %>
   <%= f.button :submit, 'Sell Plant' %>
 <% end %>
 

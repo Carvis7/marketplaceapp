@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :plants
   resources :dashboard, only: [:index]
 
-  root to: 'plants#index'
+  root to: 'pages#home'
 end
  
