@@ -1,10 +1,9 @@
 
-<h1><%= @plant.name %></h1>
-
-
-  <h3><%= @plant.variant %></h3>
+  <h1><%= @plant.name %></h1>
   <%= image_tag @plant.image %>
+  <h3><%= @plant.variant %></h3>
   <h3><%= @plant.pot_size %>cm</h3>
   <h3>$<%= @plant.price %></h3> 
-
+  <h3>Seller: <%= @plant.user.username %></h3>
+<%= link_to 'Plants for Sale', plants_path %>
 <%= link_to 'Back', plants_path  %> 

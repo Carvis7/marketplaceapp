@@ -4,6 +4,11 @@
 
 
 .hero {
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  align-self: center;
+  justify-self: center;
   width: 700px;
   height: 467px;
   background-image: url(image-path("jazmin-quaynor-QnGqi8Rd-DA-unsplash.jpg"));

@@ -1,11 +1,17 @@
 
 <h1>My Dashboard</h1>
 
-<h2>Hello, <%= current_user.email %></h2>
+<h2>Hello, <%= current_user.username %></h2>
 
 <h3>Plants For Sale</h3>
+<div class="card">
+
 <% @plants.each do |plant| %>
-  <p><%= plant.name %></p>
+  <p>
+  <%= plant.name %>
+  <%= image_tag plant.image %>
+  </p>
 <% end %>
+  </div>
 
 <%= link_to 'Update Details', edit_user_registration_path %>

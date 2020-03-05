@@ -1,0 +1,65 @@
+
+/* Navbar */
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100|Petit+Formal+Script&display=swap');
+
+nav {
+
+  background-color: #e8c1b2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  box-shadow: 0 0 25px 0 rgb(185, 185, 185);
+  z-index: 9999;
+}
+
+.brand {
+  display: inline-flex;
+  margin: 10px 60px;
+  margin-right: 0px;
+  font-family: 'Petit Formal Script', cursive;
+  font-weight: bolder;
+  font-size: 30px;
+  color: #000000;
+  -webkit-animation: text-shadow-pop-left 1.8s both;
+animation: text-shadow-pop-left 1.8s both;
+}
+
+nav ul {
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  float: right;
+  margin-right: 12px;
+  margin-top: 20px;
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+nav li {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  border-left: 1px dotted #646663;
+}
+
+nav a {
+  font-family: 'Josefin Sans', sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+nav li:last-child {
+  border-right: 1px dotted #646663;
+}    
+
+
+nav a:hover {
+  color: #646663;
+
+}
+

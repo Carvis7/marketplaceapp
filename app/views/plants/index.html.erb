@@ -1,18 +1,35 @@
-<h1> Plants for Sale </h1>
+  <div class="flexcontainer">
+    <h1> Plants for Sale </h1>
+  </div>
 
-<% if user_signed_in? %>
-  <%= link_to 'My Dashboard', dashboard_index_path %>
-  <%= link_to 'Sell a Plant', new_plant_path %>
-<% end %>
-
-<% @plants.each do |plant| %>
-  <p>
-    <%=  plant.name %> |
-    <%= link_to 'Check it out', plant_path(plant)  %> |
-    <% if user_signed_in? && plant.user_id == current_user.id %>
-    <%= link_to 'Edit Plant', edit_plant_path(plant)  %> |
-    <%= link_to 'Delete Plant', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %> |
+  <div class="flexcontainer2">
+    <% if user_signed_in? %>
+      <%= link_to 'My Dashboard', dashboard_index_path %>
+      <%= link_to 'Sell a Plant', new_plant_path %>
     <% end %>
-  </p>
+  </div>
 
-<% end %>
+
+  <div class="flexcontainer">
+
+    <% @plants.each do |plant| %>
+        <h3>
+          <%=  plant.name %> |
+        </h3>
+        <p>
+          <%= image_tag plant.image %>
+        </p>
+        <p>
+          <%= link_to 'Check it out', plant_path(plant)  %> |
+          <% if user_signed_in? && plant.user_id == current_user.id %>
+        </p>
+        <p>
+          <%= link_to 'Edit Plant', edit_plant_path(plant)  %> |
+        </p>
+        <p>
+          <%= link_to 'Delete Plant', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %> |
+          <% end %>
+        </p>
+    <% end %>
+
+  </div>
