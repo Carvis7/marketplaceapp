@@ -1,17 +1,44 @@
 
 
 
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100|Petit+Formal+Script&display=swap');
 
-
+.heroform {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("succulent.jpg");
+  margin-top: -90px;
+  height: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  filter: brightness(155%);
+  }
 
 .form-container {
-  width: 50%;
-  height: 50%;
-  border-radius: 5px;
-  background-color:#B1AEAC;
-  padding: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
-  margin-top: 150px;
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  filter: brightness(65%);
+
+
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-items: space-evenly;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+    font-size: 15px;
+}
+
+.log-in-font {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 20px;
 }
