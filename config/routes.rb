@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :plants
   resources :dashboard, only: [:index]
 
+  resources :conversations do
+    resources :messages
+  end
+
   root to: 'pages#home'
 end
- 

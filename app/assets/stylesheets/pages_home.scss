@@ -1,16 +1,66 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100|Petit+Formal+Script&display=swap');
 
 
-.hero {
-  display: flex;
-  flex: auto;
-  flex-direction: row;
-  align-self: center;
-  justify-self: center;
-  width: 700px;
-  height: 467px;
-  background-image: url(image-path("jazmin-quaynor-QnGqi8Rd-DA-unsplash.jpg"));
-  background-size:  cover;
+body, html {
+  height: 100%;
 }
+
+/* The hero image */
+.hero-image {
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("jazmin-quaynor-QnGqi8Rd-DA-unsplash.jpg");
+height: 90%;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+filter: brightness(155%);
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+text-align: center;
+position: absolute;
+top: 50%;
+left: 50%;
+font-family: 'Petit Formal Script', cursive;
+font-size: 80px;
+transform: translate(-50%, -50%);
+color: white;
+}
+
+.baby-text-links:hover{
+  color: #646663;
+}
+
+.baby-text {
+  text-align: center;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  font-family: 'Josefin Sans', sans-serif;
+  transform: translate(-50%, -50%);
+  color: white;
+  }
+
+  .baby-text-links a:link {
+    text-align: center;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    font-family: 'Josefin Sans', sans-serif;
+    transform: translate(-50%, -50%);
+    color: #FFFFFF;
+    }
+
+    .baby-text-links a:hover {
+      color: #91b77c;
+      }
+
+    .baby-text-links a:visited {
+      color: #FFFFFF;
+      }
+
+    .baby-text-links a:active {
+      color: #e8c1b2;
+      }

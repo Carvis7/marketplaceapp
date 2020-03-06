@@ -22,7 +22,8 @@ nav {
   font-family: 'Petit Formal Script', cursive;
   font-weight: bolder;
   font-size: 30px;
-  color: #000000;
+  color: #646663;
+  text-shadow: #000000 1px .5px;
   -webkit-animation: text-shadow-pop-left 1.8s both;
 animation: text-shadow-pop-left 1.8s both;
 }
@@ -32,8 +33,11 @@ nav ul {
   justify-content: center;
   align-content: center;
   float: right;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bolder;
+  color: #FFFFFF;
   margin-right: 52px;
-  margin-top: 20px;
+  margin-top: 22px;
   -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -41,16 +45,17 @@ nav ul {
 
 nav li {
   display: inline-block;
-  width: 100px;
+  width: 120px;
   text-align: center;
   border-left: 1px dotted #646663;
 }
 
 nav a {
   font-family: 'Josefin Sans', sans-serif;
-  color: #ffffff;
+  font-weight: bolder;
+  color: #FFFFFF;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 nav li:last-child {

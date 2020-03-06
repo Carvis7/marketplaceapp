@@ -1,14 +1,27 @@
 <h1>Fancy Plants</h1>
 
-<div class="hero"></div>
+<div class="hero-image"></div>
+  
+  
+  <div class="hero-text">
+    <h1>
+    Fancy Plants
+    </h1>
+  </div>
 
-<p>
-  A place for plants
-</p>
+    <div class="baby-text">
+      <h1>
+      A place for plants
+      </h1>
+    </div>
 
-<% if user_signed_in? %>
-  <%= link_to 'My Dashboard', dashboard_index_path %> - 🌱- 
-  <%= link_to 'Sell a Plant', new_plant_path %> - 🌱- 
-<% end %>
+    <div class="baby-text-links">
+      <% if user_signed_in? %>
+        <%= link_to 'My Dashboard', dashboard_index_path %> 
+        <%= link_to 'Sell a Plant', new_plant_path %> 
+      <% end %>
 
-<%= link_to "Visit Marketplace", 'plants#index' %>
+      <%= link_to "Visit Marketplace", 'plants#index' %>
+    </div>
+
+</div>
