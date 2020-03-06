@@ -10,12 +10,13 @@
 <div class="module">
 
 <% @plants.each do |plant| %>
-  <p>
-  <%= plant.name %>
+  <ul>
   <%= image_tag plant.image %>
-  </p>
+  <p><%= plant.name %></p>
+  </ul>
 <% end %>
   </div>
 </div>
-<%= link_to 'Update Details', edit_user_registration_path %>
+
+<div class="p2"><%= link_to 'Update Details', edit_user_registration_path %></div>
 </body>
