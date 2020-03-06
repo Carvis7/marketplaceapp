@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100|Petit+Formal+Script&display=swap');
 
 .heroform {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("succulent.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url(asset_path("succulent.jpg"));
   margin-top: -90px;
   height: 90%;
   background-position: center;
