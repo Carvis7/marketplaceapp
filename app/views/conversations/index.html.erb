@@ -1,23 +1,47 @@
+ 
+<div class="hero-image-messages">
+
+   <div class="text-box">
+
+ 
+<div class="containerforstuff">
+
  <h3>Mailbox</h3>
 
-    <%= link_to "New Message",   new_conversation_path %>
+    <%-  #<ul><%= link_to "New Message",   new_conversation_path -%>
 
 
-
-   <% @conversations.each do |conversation| %>
-   <% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %>
-    <% if conversation.sender_id == current_user.id %>
-      <% recipient = User.find(conversation.recipient_id) %>
-    <% else %>
-      <% recipient = User.find(conversation.sender_id) %>
+  <li>
+    <% @conversations.each do |conversation| %>
+      <% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %>
+        <% if conversation.sender_id == current_user.id %>
+          <% recipient = User.find(conversation.recipient_id) %>
+        <% else %>
+          <% recipient = User.find(conversation.sender_id) %>
+        <% end %>
+      <div class="text">
+        Your Conversations
+      </div>
+    <ul>
+    <div class="text-2">
+      <%= link_to recipient.username,   conversation_messages_path(conversation)%>
+    </div>
+      <% end %>
     <% end %>
-    <%= link_to recipient.username,   conversation_messages_path(conversation)%>
-   <% end %>
-  <% end %>
+    </ul>
+    </li>
 
- <h3>All Users</h3>
-   <% @users.each do |user| %>
-    <% if user.id != current_user.id %>
-   <%= user.username %> <%= link_to ‘Message me!’, conversations_path(sender_id: current_user.id, recipient_id: user.id), method: ‘post’%>
-  <% end %>
- <% end %>
+
+<%-# commented code block -%>
+
+<% if false %>
+    <h3>All Users</h3>
+      <% @users.each do |user| %>
+        <% if user.id != current_user.id %>
+      <%= user.username %> <%= link_to "Message me!", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+      <% end %>
+    <% end %>
+<% end %>
+ </div>
+</div>
+</div>

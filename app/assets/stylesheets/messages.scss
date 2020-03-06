@@ -1,3 +1,16 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 80px;
+  transform: translate(-50%, -50%);
+  color: white;
+  }
+  

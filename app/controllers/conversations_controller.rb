@@ -6,6 +6,7 @@ def index
  @users = User.all
  @conversations = Conversation.all
  end
+
 def create
  if Conversation.between(params[:sender_id],params[:recipient_id])
    .present?
