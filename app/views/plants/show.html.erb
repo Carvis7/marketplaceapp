@@ -1,9 +1,16 @@
 
+
+
+<div class="plant-card">
   <h1><%= @plant.name %></h1>
-  <%= image_tag @plant.image %>
+
+  <div class="plantimgshow"><%= image_tag @plant.image %></div>
+
   <h3><%= @plant.variant %></h3>
   <h3><%= @plant.pot_size %>cm</h3>
-  <h3>$<%= @plant.price %></h3> 
+  <div class="plant-price">$<%= @plant.price %></div> 
   <h3>Seller: <%= @plant.user.username %></h3>
-<%= link_to 'Plants for Sale', plants_path %>
-<%= link_to 'Back', plants_path  %> 
+  <p><%= link_to  "Message the Seller", conversations_path(sender_id: current_user.id, recipient_id: @plant.user.id), method: :post %></p>
+  <p><%= link_to 'Back to Marketplace', plants_path %></p>
+  <p><button>Buy This Plant</button></p>
+</div>

@@ -3,32 +3,138 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.flexcontainer {
+
+
+
+body {font-family: sans-serif;}
+p {color: #000000;}
+
+h2 {
+  font-size: 25px;
+  color: #646663;  
+}
+.centered {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  flex-flow: row wrap;
-  background-color: #FFFFFF;
+  margin: 0 auto;
+  margin-top: 5%;
+  padding: 0em 1em;
 }
 
-.flexcontainer2 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  flex-flow: row wrap;
-  background-color: #e8c1b2;
+@media screen and (min-width: 52em) {
+    .centered {
+        max-width: 52em;
+    }
 }
 
-.grid1{
-  display: grid;
-  grid-auto-columns: auto;
-  gap: 20px;
-  background-color: chartreuse;
+/*--------------------------------------------------------------
+Header styles 
+--------------------------------------------------------------*/
+
+.masthead {
+    margin-top: 5%;
+    background: #91b77c;
+    padding: 2px 300px;
+    box-shadow: 13px 10px 8px hsl(0, 0%, 70%);
 }
+
+.site-title {
+    padding: 12px -1px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+
+.site-title a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.site-title a:hover {
+color: #646663;
+}
+
+/* Card Layout */
+body {
+  background: #ffffff;
+  line-height: 1.4;
+}
+
+// .flexbody {
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+// }
+
+
+.card {
+	background: #ffffff;
+	margin-bottom: 2em;	
+}
+
+.card a {
+  text-align: center;
+	color: black;
+	text-decoration: none;
+}
+
+.card a:hover {
+	box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+}
+
+.card-content {
+	padding: 1.4em;
+}
+
+.card-content h2 {
+	margin-top: 0;
+	margin-bottom: .5em;
+	font-weight: normal;
+}
+
+.card-content p {
+	font-size: 95%;
+}
+
+
+
+.cards {
+
+  width: 30%;
+  background-color: #ffffff;
+}
+
+
+
+
+// .flexcontainer {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   flex-flow: row wrap;
+//   background-color: #FFFFFF;
+// }
+
+// .flexcontainer2 {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: space-evenly;
+//   flex-wrap: wrap;
+//   flex-flow: row wrap;
+//   background-color: #e8c1b2;
+// }
+
+// .grid1{
+//   display: grid;
+//   grid-auto-columns: auto;
+//   gap: 20px;
+//   background-color: chartreuse;
+// }
 
 
 img {

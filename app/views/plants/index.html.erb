@@ -1,35 +1,63 @@
-  <div class="flexcontainer">
-    <h1> Plants for Sale </h1>
+
+
+      <!-- layout test-->
+
+
+<header class="masthead clear">
+
+    <div class="site-branding">
+
+      <div class="site-title"> 
+              <h1> Plants for Sale </h1>
+
+        <% if user_signed_in? %>
+          <p><%= link_to 'My Dashboard ', dashboard_index_path %> |
+          <%= link_to ' Sell a Plant', new_plant_path %></p>
+        <% end %>
+      </div>
   </div>
+</header>
 
-  <div class="flexcontainer2">
-    <% if user_signed_in? %>
-      <%= link_to 'My Dashboard', dashboard_index_path %>
-      <%= link_to 'Sell a Plant', new_plant_path %>
-    <% end %>
-  </div>
+<div class="flexbody">
 
+  <div class="centered">
 
-  <div class="flexcontainer">
 
     <% @plants.each do |plant| %>
-        <h3>
-          <%=  plant.name %> |
-        </h3>
-        <p>
-          <%= image_tag plant.image %>
-        </p>
-        <p>
-          <%= link_to 'Check it out', plant_path(plant)  %> |
-          <% if user_signed_in? && plant.user_id == current_user.id %>
-        </p>
-        <p>
-          <%= link_to 'Edit Plant', edit_plant_path(plant)  %> |
-        </p>
-        <p>
-          <%= link_to 'Delete Plant', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %> |
-          <% end %>
-        </p>
+
+    <section class="cards">
+
+      <article class="card">
+
+
+          <div class="card-content">
+
+            <h2><%=  plant.name %></h2>
+              <%= image_tag plant.image %>
+
+            <p><%= link_to 'View', plant_path(plant)  %> 
+              <% if user_signed_in? && plant.user_id == current_user.id %> |
+            
+
+            
+              <%= link_to 'Edit', edit_plant_path(plant)  %> |
+            
+
+            
+              <%= link_to 'Delete', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %> 
+              <% end %>
+            </p>
+
+          </div>
+
+        </a>
+      </article>
+      <!-- .card -->
+
+    </section>
+
     <% end %>
 
   </div>
+
+</div>

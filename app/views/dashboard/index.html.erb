@@ -13,6 +13,7 @@
   <ul>
   <%= image_tag plant.image %>
   <p><%= plant.name %></p>
+  <p><%= link_to 'View', plant_path(plant)  %></p>
   </ul>
 <% end %>
   </div>
