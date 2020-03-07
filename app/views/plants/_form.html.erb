@@ -12,7 +12,7 @@
       <%= simple_form_for @plant do |f| %>
         <div class="simpleform-inputs">
           <ul>  <%= f.input :name, required: true %> </ul>
-          <ul>  <%= f.input :image, as: :file, label: "Image" %> </ul>
+          <ul>  <%= f.input :image, required: true, as: :file, label: "Image" %> </ul>
           <ul>  <%= f.input :variant, required: true, as: :radio_buttons, collection: [['Tree', 'Tree'], ['Flowering', 'Flowering'],['Bush', 'Bush'],['Fruit/Veg/Herb', 'Fruit/Veg/Herb']], label_method: :second, value_method: :first %> </ul>
           <ul>  <%= f.input :pot_size, label: "Pot Size (cm)" %> </ul>
           <ul>  <%= f.input :price, required: true, collection: 1..999, label: "Price $" %> </ul>
