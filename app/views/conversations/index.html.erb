@@ -10,6 +10,9 @@
 
     <%-  #<ul><%= link_to "New Message",   new_conversation_path -%>
 
+      <div class="text">
+        Your Conversations
+      </div>
 
   <li>
     <% @conversations.each do |conversation| %>
@@ -19,16 +22,11 @@
         <% else %>
           <% recipient = User.find(conversation.sender_id) %>
         <% end %>
-      <div class="text">
-        Your Conversations
-      </div>
-    <ul>
     <div class="text-2">
       <%= link_to recipient.username,   conversation_messages_path(conversation)%>
     </div>
       <% end %>
     <% end %>
-    </ul>
     </li>
 
 
