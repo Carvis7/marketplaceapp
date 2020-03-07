@@ -4,7 +4,7 @@ class PlantsController < ApplicationController
   before_action :authorize_user!, only: [:update,:edit,:destroy]
 
   def index
-    @plants = Plant.all
+    @plants = Plant.all.where(available:true)
   end
 
   def show
@@ -18,6 +18,7 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     @plant.user_id = current_user.id
+    @plant.available = true
     if(@plant.save)
       redirect_to @plant
     else
@@ -40,15 +41,14 @@ class PlantsController < ApplicationController
   def destroy
     @plant.delete
 
-    redirect_to plants_path
+    redirect_to dashboard_index_path
   end
-
 
 
   private
 
   def plant_params
-    params.require(:plant).permit(:name,:variant,:price,:pot_size,:image)
+    params.require(:plant).permit(:name,:variant,:price,:pot_size,:image,:available)
   end
 
   def find_plant

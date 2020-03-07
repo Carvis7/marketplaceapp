@@ -22,9 +22,22 @@ h1,h2,h3,p {
   text-decoration: underline #e8c1b2;
 }
 
+h1 {
+  font-family: 'Petit Formal Script', cursive;
+}
 
+h2,h3 {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.dash-h1 {
+  font-size: 25px;
+  color: #646663;
+  text-decoration: underline solid #659340;
+}
 
 .p2 {
+  font-family: 'Josefin Sans', sans-serif;
   margin-top: 20%;
   color: #91b77c;
   text-align: left;
@@ -41,7 +54,7 @@ h1,h2,h3,p {
 }
 
 .grid {
-  margin-top: 5%;
+  margin-top: 10%;
 
   /* Grid Fallback */
   display: flex;
@@ -51,7 +64,7 @@ h1,h2,h3,p {
   display: grid;
   grid-auto-columns: auto;
   grid-auto-rows: minmax(150px, auto);
-  margin-left: -30px;
+  margin-left: -20px;
   margin-right: 30px;
   grid-gap: 1em;
 

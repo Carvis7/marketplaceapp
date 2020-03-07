@@ -1,5 +1,8 @@
 <body>
+
+<div class="dash-h1">
 <h1>My Dashboard</h1>
+</div>
 
 <h2>Hello, <%= current_user.username %></h2>
 
@@ -14,10 +17,33 @@
   <%= image_tag plant.image %>
   <p><%= plant.name %></p>
   <p><%= link_to 'View', plant_path(plant)  %></p>
+  <p><%= link_to 'Edit', edit_plant_path(plant)  %></p>
+  <p><%= link_to 'Delete', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %></p>
   </ul>
 <% end %>
   </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+
+<h3>Purchased Plants</h3>
+
+<div class="grid">
+<div class="module">
+
+    <% current_user.orders.each do |order| %>
+      <ul>
+      <%= image_tag order.plant.image %>
+      <p><%= order.plant.name %></p>
+      </ul>
+    <% end %>
+
+</div>
+</div>
+
 
 <div class="p2"><%= link_to 'Update Details', edit_user_registration_path %></div>
 </body>
