@@ -1,11 +1,24 @@
 
-<%= simple_form_for @plant do |f| %>
-  <%= f.input :name, required: true %>
-  <%= f.input :image, as: :file, label: "Image" %>
-  <%= f.input :variant, required: true, as: :radio_buttons, collection: [['Tree', 'Tree'], ['Flowering', 'Flowering'],['Bush', 'Bush'],['Fruit/Veg/Herb', 'Fruit/Veg/Herb']], label_method: :second, value_method: :first %>
-  <%= f.input :pot_size, label: "Pot Size (cm)" %>
-  <%= f.input :price, required: true, collection: 1..999, label: "Price $" %>
-  <%= f.button :submit, 'Sell Plant' %>
-<% end %>
+<div class="sell-font">
+  <h1>Sell a Plant</h1>
+</div>
 
+
+
+<div class="herosimpleform">
+
+  <div class="simpleform-container">
+
+      <%= simple_form_for @plant do |f| %>
+        <div class="simpleform-inputs">
+          <ul>  <%= f.input :name, required: true %> </ul>
+          <ul>  <%= f.input :image, as: :file, label: "Image" %> </ul>
+          <ul>  <%= f.input :variant, required: true, as: :radio_buttons, collection: [['Tree', 'Tree'], ['Flowering', 'Flowering'],['Bush', 'Bush'],['Fruit/Veg/Herb', 'Fruit/Veg/Herb']], label_method: :second, value_method: :first %> </ul>
+          <ul>  <%= f.input :pot_size, label: "Pot Size (cm)" %> </ul>
+          <ul>  <%= f.input :price, required: true, collection: 1..999, label: "Price $" %> </ul>
+          <ul>   <%= f.button :submit, 'Sell Plant' %> </ul>
+      <% end %>
+    <ul> <%= link_to 'Back', plants_path  %> </ul>
+  </div>
+</div>
 
