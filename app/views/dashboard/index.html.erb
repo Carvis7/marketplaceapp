@@ -10,17 +10,22 @@
 
 
 <div class="grid">
-<div class="module">
+  <div class="module">
+
+
 
 <% @plants.each do |plant| %>
-  <ul>
-  <%= image_tag plant.image %>
-  <p><%= plant.name %></p>
-  <p><%= link_to 'View', plant_path(plant)  %></p>
-  <p><%= link_to 'Edit', edit_plant_path(plant)  %></p>
-  <p><%= link_to 'Delete', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %></p>
-  </ul>
+    <% if plant.available == true %>
+    <ul>
+    <%= image_tag plant.image %>
+    <p><%= plant.name %></p>
+    <p><%= link_to 'View', plant_path(plant)  %></p>
+    <p><%= link_to 'Edit', edit_plant_path(plant)  %></p>
+    <p><%= link_to 'Delete', plant_path(plant), method: :delete, data: {confirm: 'Are you sure?'}  %></p>
+    <% end %>
+    </ul>
 <% end %>
+
   </div>
 </div>
 
@@ -38,6 +43,34 @@
       <ul>
       <%= image_tag order.plant.image %>
       <p><%= order.plant.name %></p>
+        <p><%= link_to 'View', plant_path(order.plant)  %></p>
+
+      </ul>
+    <% end %>
+
+</div>
+</div>
+
+<br>
+<br>
+
+
+<h3>Sold Plants</h3>
+
+<div class="grid">
+<div class="module">
+
+    <% current_user.plants.where(available:false).each do |plant| %>
+      <ul>
+      <%= image_tag plant.image %>
+      <p><%= plant.name %></p>
+        <p><%= link_to 'View', plant_path(plant)  %></p>
+          <p><%= link_to  "Message the Buyer", conversations_path(sender_id: current_user.id, recipient_id: plant.order.user.id), method: :post %></p>
+
+      <div class="sold">
+        SOLD
+      </div>
+
       </ul>
     <% end %>
 

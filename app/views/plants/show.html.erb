@@ -14,5 +14,9 @@
   <h3>Seller: <%= @plant.user.username %></h3>
   <p><%= link_to  "Message the Seller", conversations_path(sender_id: current_user.id, recipient_id: @plant.user.id), method: :post %></p>
   <p><%= link_to 'Back to Marketplace', plants_path %></p>
-  <p><button><%= link_to "Buy This Plant", purchases_path(plant_id: @plant.id), method: :post %></button></p>
+
+  <% if @plant.available == true %>
+    <p><button><%= link_to "Buy This Plant", purchases_path(plant_id: @plant.id), method: :post %></button></p>
+  <% end %>
+
 </div>

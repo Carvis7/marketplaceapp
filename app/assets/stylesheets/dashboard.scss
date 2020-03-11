@@ -82,6 +82,15 @@ h2,h3 {
   flex: 1 1 200px;
 }
 
+
+/* sold text */
+
+.sold {
+  text-align: center;
+  font-size: 20px;
+  color: red;
+}
+
 /* If Grid is supported, remove the margin we set for the fallback */
 @supports (display: grid) {
   .module {
