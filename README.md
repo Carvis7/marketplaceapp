@@ -99,6 +99,15 @@ Users, before purchasing, are able to open chat sessions, and ask sellers questi
 
 ## My Tech Stack
 
+The Tech Stack I used in my app is as follows:
+
+- PostgreSQL
+- Ruby On Rails
+- HTML5
+- CSS3
+- AWS S3
+- Heroku
+
 ![Tech Stack](app/assets/images/techstack.png "Tech Stack")
 
 ---
@@ -133,6 +142,14 @@ As a Seller, I would like to be able to:
 ---
 
 ## Schema Design and ERD
+
+The Fancy Plants rails app utilises mostly 'one to one' and 'one to many' relationships within the database.
+
+- Conversation has_many messages and belongs_to a 'sender' and a 'recipient'.
+- Message belongs_to a Conversation and a User.
+- User has_many Orders, has_many Conversations, and has_many Plants.
+- An Order belongs_to a User, and belongs_to a Plant.
+- A Plant belongs_to a User and has_one Order.
 
 ![marketplace-schema-design](/assets/marketplace-schema-design.png)
 
@@ -203,17 +220,50 @@ Rails Routes dispatches URL's to a controllers action. It automatically generate
 
 ---
 
-## Third part servcies
+## Third Party Services
 
 ##### Devise
 
 Devise is a Rack based flexible authentication solution for Rails that is based on Warden. It is based on a modularity concept meaning that it only uses what is really needed.
 
+It's composed of 10 modules:
 
+- Database Authenticatable: hashes and stores a password in the database to validate the authenticity of a user while signing in. The authentication can be done both through POST requests or HTTP Basic Authentication.
+- Omniauthable: adds OmniAuth (https://github.com/omniauth/omniauth) support.
+Confirmable: sends emails with confirmation instructions and verifies whether an account is already confirmed during sign in.
+- Recoverable: resets the user password and sends reset instructions.
+- Registerable: handles signing up users through a registration process, also allowing them to edit and destroy their account.
+- Rememberable: manages generating and clearing a token for remembering the user from a saved cookie.
+- Trackable: tracks sign in count, timestamps and IP address.
+- Timeoutable: expires sessions that have not been active in a specified period of time.
+- Validatable: provides validations of email and password. It's optional and can be customized, so you're able to define your own validations.
+- Lockable: locks an account after a specified number of failed sign-in attempts. Can unlock via email or after a specified time period.[1]
 
 ##### AWS S3
 
+The Amazon Simple Storage Service (Amazon S3) is a web-based cloud storage service that provides object storage througha web service interface.
+It uses scalable storage infrastructure. The same infrastructure that is used to run it's global e-commerce network, Amazon.com.
+Amazon S3 uses 'buckets' as it's basic storage unit for objects. Each object is identified with a user-assigned key that is unique each time.
+
+Buckets can be managed three ways. These are:
+
+- By using the console provided by Amazon S3
+- Programmatically by using the AWS SDK
+- With the Amazon S3 REST API
+
+Objects stored on the S3 server can be downloaded using the HTTP GET interface.
 
 ##### Heroku
 
+Heroku is a free to use cloud platform that allows developers to build, deliver, monitor and scale apps.
+It is based on a managed container system and has integrated data services.
+It is able to deploy code written in Node, Ruby, Java, PHP, Python, Go, Scala, or Clojure.
+
+In terms of security and compliance, Heroku regularly performs audits and maintains PCI, HIPAA, ISO, and SOC compliance.
+
+
 ---
+
+##### References
+
+1. https://github.com/heartcombo/devise
