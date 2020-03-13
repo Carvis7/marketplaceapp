@@ -8,7 +8,7 @@
 
 ---
 
-##### The 'Fancy Plants' Rails Application was developed as part of the Coder Academy CLG Marketplace Project, Term 2 Assessment.
+##### The 'Fancy Plants' Rails Application was developed by Carly Davis as part of the Coder Academy CLG Marketplace Project, Term 2 Assessment.
 
 ---
 
@@ -23,9 +23,12 @@ https://trello.com/b/DqN2ux5B/marketplace-app
 - ##### Heroku Deployment Site
 https://fierce-plateau-30702.herokuapp.com
 
+- ##### Slide Deck
+https://docs.google.com/presentation/d/1Z7QGJm5-rGMnyN3mqStdQTuRGx2bcfUGDpZENgkjJJ0/edit?usp=sharing
+
 ---
 
-### Instructions
+### Instructions 
 
 To access the rails app, please visit the Heroku site by visiting https://fierce-plateau-30702.herokuapp.com.
 
@@ -102,43 +105,115 @@ Users, before purchasing, are able to open chat sessions, and ask sellers questi
 
 ## User Story
 
-As a buyer who wants a plant
+There are two types of users associated with the Fancy Plants rails app. They are:
+- Buyer
+- Seller
 
-given our plant exists
+Only one account is needed to perform both of these functions.
 
-plant is on sale
+The user stories are listed below.
 
-I can see the plant
+As a Buyer, I want to:
 
-I click buy on the plant page
+- Create a Fancy Plants account.
+- Have the ability to update my profile details.
+- Browse the range of products for sale in the marketplace.
+- View information about a specific product, including price and what the product is specifically (In this instance, what type of plant it is).
+- Purchase a product.
+- Ask a seller questions about the product. Both post and pre-purchase. As well as be able to organise a meet-up and exchange funds.
+- Be able to view the products I have purchased in the past.
+
+As a Seller, I would like to be able to:
+
+- List the product I am wanting to sell, including price and other details.
+- Edit and/or delete products that I am selling.
+- Have the ability to communicate with customers after they have purchased one of my products.
+- Be able to see what products I have listed have been sold.
+
+---
+
+## Schema Design and ERD
+
+![marketplace-schema-design](/assets/marketplace-schema-design.png)
+
+---
+
+## Trello
+
+https://trello.com/b/DqN2ux5B/marketplace-app
+
+
+I used a Trello board to track my workflow and sectioned tasks into boards related to specific areas of my app such as design, production, and deployment; rather than setting specific tasks for days or weeks.
+
+I wanted to build my app on a needs basis, and I work and think better if a specific task is carried out to the end before a new one is started.
+
+The board reflects this.
+
+I also abandoned some elements of the app I wanted to integrate in the beginning due to time restraints. These are noted in the Trello board.
+
+![Screen Shot 2020-02-29 at 1.59.55 pm](/assets/Screen%20Shot%202020-02-29%20at%201.59.55%20pm.png)
+![Screen Shot 2020-03-07 at 9.45.06 am](/assets/Screen%20Shot%202020-03-07%20at%209.45.06%20am_ngiaplzp9.png)
+![Screen Shot 2020-03-12 at 10.43.56 am](/assets/Screen%20Shot%202020-03-12%20at%2010.43.56%20am_hfp1uq44d.png)
+![trello-board-1](/assets/trello-board-1_ihlv7lelj.png)
+![trello-board-2](/assets/trello-board-2_wzychalyy.png)
+
+---
+
+## Wireframes
+
+##### Web View
+
+![wireframe1-landing-page](/assets/wireframe1-landing-page.png)
+![wireframe2-marketplaceview](/assets/wireframe2-marketplaceview.png)
+![wireframe3-userdashboard](/assets/wireframe3-userdashboard.png)
+![wireframe4-inbox](/assets/wireframe4-inbox.png)
+![wireframe5-messages](/assets/wireframe5-messages.png)
+![Wireframe6-signup](/assets/Wireframe6-signup.png)
+![WIreframe7-login](/assets/WIreframe7-login.png)
+
+<br>
+
+##### Mobile View
+
+![wireframe8-mobilehomepage](/assets/wireframe8-mobilehomepage.png)
+![wireframe10-mobileuserdashboard](/assets/wireframe10-mobileuserdashboard.png)
+![wireframe9-mobilemarketplace](/assets/wireframe9-mobilemarketplace.png)
+![wireframe11-mobilesignin:login](/assets/wireframe11-mobilesignin:login.png)
+![wireframe12-mobilemessenger](/assets/wireframe12-mobilemessenger.png)
 
 ---
 
 ## high level components
 
-routes
-controllers
-models
-views
+The Fancy Plants rails application utilises the MVC rails architecture framework.
+This framework works by sending certain jobs to different sections of the app such as the Model, Controllers, and the View.
+
+The Model is linked to the database and contains the data for the application.
+Its also contains the 'state' of the application such as what orders a customer has, and it also notifies the view of any state changes.
+Models handle all the business logic within an app, and determine how each table is related to one another in your schema design.
+
+The View generates the UI and pressents the data within the app to the user.
+Views generally don't do any processing, and work with models to help determine what is displayed to the user. 
+Views also work with stylesheets to help process any CSS contained within the app, if any.
+
+Controllers recieve information from the user and send it back to the model for processing. Once processed, the model then communicates with the View and the information is then passed back to the user.
+The Controller is a collection of methods that follow the CRUD (Create, Read, Update, Destroy) system.
+
+Rails Routes dispatches URL's to a controllers action. It automatically generates paths for your app, thus eliminating the need to hard code strings into your Views.
 
 ---
 
 ## Third part servcies
 
-aws
-heroku
+##### Devise
+
+Devise is a Rack based flexible authentication solution for Rails that is based on Warden. It is based on a modularity concept meaning that it only uses what is really needed.
+
+
+
+##### AWS S3
+
+
+##### Heroku
 
 ---
-
-## describe how the relationship diagram...
-
-Books has many chapters
-
-## discuss db relationships
-
-14 and 17 covers 18
-
-## describe tasks are allocated
-
-trello
-
